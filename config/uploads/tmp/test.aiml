@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<!DOCTYPE aiml PUBLIC "-//W3C//DTD Specification Version 1.0//EN" "http://irfansural.com/aries/xml/aiml.dtd">
+		<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1">
+   <category>
+      <pattern>I LIKE *</pattern>
+      <template>
+         I too like <star/>.
+      </template>
+   </category>
+   <category>
+      <pattern>A * IS A *</pattern>
+   <template>
+      How <star index="1"/> can not be a <star index="2"/>?
+   </template>
+   </category>
+</aiml>

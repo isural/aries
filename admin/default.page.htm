@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="[charset]">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Irfan SURAL">
+<title>[pageTitle]</title>
+<link rel="shortcut icon" href="../favicon.ico" />
+<link href="../includes/css/bootstrap.min.css" rel="stylesheet">
+<link href="../includes/css/sb-admin.css" rel="stylesheet">
+<link href="../includes/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- Section Header End -->
+<!-- Section PageBody Start -->
+[blank]
+<body>
+<div id="wrapper">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
+    [logo]
+    [topNav]
+    [leftNav] 
+   </nav>
+  <div id="page-wrapper"> 
+    [main]
+    [footer] 
+  </div>
+</div>
+</body>
+</html>
+<!-- Section PageBody End -->
+<!-- Section Logo Start -->
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="index.php?page=main">Artificial Intelligence Distance Education Support</a>
+</div>
+<!-- Section Logo End -->
+<!-- Section TopNav Start -->
+<ul class="nav navbar-right top-nav">
+  [topNavLinks]
+</ul>
+<!-- Section TopNav End -->
+<!-- Section LeftNav Start -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    [leftNavLinks]
+  </ul>
+</div>
+<!-- Section LeftNav End -->
+<!-- Section Main Start -->
+[blank]
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 class="page-header">[mainTitle]</h3>
+      [errMsg]
+    </div>
+  </div>
+ <div class="row">[mainContent]</div>
+</div>
+<!-- Section Main End -->
+<!-- Section Footer Start -->
+[blank]
+[FooterInfo]
+<script src="../includes/js/jquery.js"></script>
+<script src="../includes/js/bootstrap.min.js"></script>
+<!-- Section Footer End -->
+<!-- Section NavHeader Start -->
+[blank]
+<div class="nav_header">[headerTitle]</div>
+<!-- Section NavHeader End -->
+<!-- Section RightNav Start -->
+[blank]
+[navHeader]
+[rightNavLinks]
+<!-- Section RightNav End -->
+<!-- Section NavLink Start -->
+[blank]   <li>
+            <div[linkClass]>
+			 <a [linkHref][linkOnclick][linkTitle]> [linkLabel] </a>
+            </div>
+          </li>
+<!-- Section NavLink End -->
+<!-- Section NavTopLink Start -->
+[blank]
+<li><a [linkHref][linkTitle]><i[iClass]></i>[linkLabel]</a></li>
+<!-- Section NavTopLink End -->
+<!-- Section NavLeftLink Start -->
+[blank]<li[linkClass]><a [linkHref][linkTitle]><i[iClass]></i>[linkLabel]</a>
+</li>
+<!-- Section NavLeftLink End -->
+<!-- Section TitleSpan Start -->
+[blank]
+<!-- Section TitleSpan End -->
+<!-- Section NoRightNav Start -->
+[blank]
+<!-- Section NoRightNav End -->
+<!-- Section NoLeftNav Start -->
+[blank]
+<!-- Section NoLeftNav End -->
+<!-- Section ShowError Start -->
+[blank]
+<!-- Section ShowError End -->
+<!-- Section HideError Start -->
+[blank]
+<!-- Section HideError End -->
+<!-- Section ErrorMessage Start -->
+[blank]
+<div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+    </span>
+    <span class="sr-only">Error:</span>[errorMessage]
+</div>
+<!-- Section ErrorMessage End -->
+<!-- Section LoginForm Start -->
+[blank]
+<div class="col-lg-6">
+  <form class="form-horizontal" id="fm-form" method="post" action="index.php?page=login">
+    <div class="form-group">
+      <label for="user_name" class="control-label col-xs-2">Username</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" id="user_name" placeholder="Username" name="user_name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pw" class="control-label col-xs-2">Password</label>
+      <div class="col-xs-10">
+        <input type="password" class="form-control" id="pw" placeholder="Password" name="pw">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-offset-2 col-xs-10">
+        <button type="submit" class="btn btn-primary" value="Submit">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- Section LoginForm End -->
+<!-- Section ChangeBot Start -->
+<!--fieldset-->
+<div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">To edit a Bot please select from "Change Active Bot" or create new Bot by selecting "Add New Bot"</div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <form id="changebot" action="index.php?page=select_bots" method="post">
+          <table class="table table-striped table-bordered table-hover">
+            <tbody>
+              <tr>
+                <td><label for="changebot">Change Active Bot :</label></td>
+                <td>
+                    <select name="bot_id" id="bot_id" onchange="submit()" >
+					[options]
+                    </select>&nbsp;<button class="btn btn-info btn-flat" type="button" onClick="submit()">Go!</button>
+                    </td>
+                <td><input type="hidden" id="action" name="action" value="change"/>
+                  <label for="botid">Bot ID:</label>
+                  <input class="form-horizontal" type="text" size="1" disabled="disabled" value="[bot_id]" />
+                  (Not Editable)</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+    <!--/fieldset-->
+    <!-- Section ChangeBot End -->
+    <!-- Section SelectBotForm Start -->
+    [blank]
+    <!--fieldset-->
+    <div class="panel-body">
+      <div class="table-responsive">
+        <form id="botAttributes" action="index.php?page=select_bots" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td><label for="bot_name">Bot Name</label></td>
+                <td><input type="text"  class="form-control" id="bot_name" name="bot_name" value="[bot_name]"/></td>
+              </tr>
+              <tr>
+                <td><label for="bot_active">Bot Active</label></td>
+                <td><select name="bot_active" id="bot_active">
+                    <option value="1" [sel_yes]>Yes</option>
+                    <option value="0" [sel_no]>No</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td><label for="format">Response Format</label></td>
+                <td><select name="format" id="format">
+                    <option value="html" [sel_html]>HTML</option>
+                    <option value="xml" [sel_xml]>XML</option>
+                    <option value="json" [sel_json]>JSON</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td><label for="unknown_user">Unknown User</label></td>
+                <td><input type="text" name="unknown_user" id="unknown_user" value="[bot_unknown_user]" class="form-control"></td>
+              </tr>
+              <tr>
+                <td><label for="debugemail">Debug Email Address</label></td>
+                <td><input type="text" name="debugemail" id="debugemail" value="[bot_debugemail]" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td><label for="default_aiml_pattern">Default Pickup Line Pattern</label></td>
+                <td><input type="text" name="default_aiml_pattern" id="default_aiml_pattern" value="[bot_default_aiml_pattern]" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td><label for="error_response">Error Response Message</label></td>
+                <td><input type="text" name="error_response" id="error_response" value="[bot_error_response]" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td colspan="2"><div class="text-info">The chatbot "[bot_name]" has [aiml_count] AIML categories in the database.</div></td>
+              </tr>
+              <tr>
+                <td><label for="bot_desc">Bot Description</label></td>
+                <td><textarea id="bot_desc" name="bot_desc" class="form-control">[bot_desc]</textarea></td>
+              </tr>
+              <tr>
+                <td><label for="bot_parent_id">Bot Parent Name</label></td>
+                <td><select name="bot_parent_id" id="bot_parent_id">
+				[parent_options]
+                  </select></td>
+              </tr>
+              <tr>
+                <td><label for="save_state">Save State</label></td>
+                <td><select name="save_state" id="save_state">
+                    <option value="session" [sel_session]>Session</option>
+                    <option value="database" [sel_db]>Database</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td><label for="default_remember_up_to">Bot History Lines</label></td>
+                <td><input type="text" class="form-control" id="remember_up_to" name="remember_up_to" value="[remember_up_to]"/></td>
+              </tr>
+              <tr>
+                <td><label for="conversation_lines">Chat Lines To Display</label></td>
+                <td><input type="text" class="form-control" id="conversation_lines" name="conversation_lines" value="[bot_conversation_lines]"/></td>
+              </tr>
+              <tr>
+                <td><label for="debugmode">Debug Mode</label></td>
+                <td><select name="debugmode" id="debugmode">
+                    <option value="0" [dm_]>source code view - show debugging in source code</option>
+                    <option value="1" [dm_i]>file log - log debugging to a file</option>
+                    <option value="2" [dm_ii]>page view - display debugging on the webpage</option>
+                    <option value="3" [dm_iii]>email each conversation line (not recommended)</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td><label for="debugshow">Debug Level</label></td>
+                <td><select name="debugshow" id="debugshow">
+                    <option value="0" [ds_]>Show no debugging</option>
+                    <option value="1" [ds_i]>errors only</option>
+                    <option value="2" [ds_ii]>general + errors</option>
+                    <option value="3" [ds_iii]>general + errors + sql</option>
+                    <option value="4" [ds_iv]>show everything</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td colspan="2"><input type="hidden" id="bot_id" name="bot_id" value="[bot_id]"/>
+                  <input type="submit" name="action" id="action" value="[action]" class="btn btn-primary btn-lg btn-block"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/fieldset-->
+<!-- Section SelectBotForm End -->
+<!-- Section FormRow Start -->
+<div class="[leftRight]">
+  <label for="[row_label]"><span class="label">[row_label]:</span></label>
+  <span class="formw">
+  <input name="[row_label]" id="[row_label]" value="[row_value]" />
+  </span></div>
+<!-- Section FormRow End -->
+<!-- Section ConversationLogsMain Start -->
+        <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <td width="80%">
+                    [Log_Left]
+                    </td>
+                    <td>
+            <div data-spy="scroll" data-target=".navbar" data-offset="12" class="scrll">
+			  <div id="section1">
+    			<div class="container-fluid">
+			     [Log_Right]
+                 </div>
+    		  </div>  
+  			</div>
+                 </td>
+                </tr>
+               </thead>
+        </table>
+        </div>
+<!-- Section ConversationLogsMain End -->
+<!-- Section ConversationLogs1 Start -->
+<div class="text-primary">[bot_name]'s Conversation Logs</div>
+[convo]
+<!-- Section ConversationLogs1 End -->
+<!-- Section SpellCheckMain Start -->
+        <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <td width="80%">
+                    [Spell_Left]
+                    </td>
+                    <td>
+            <div data-spy="scroll" data-target=".navbar" data-offset="12" class="scrll">
+			  <div id="section1">
+    			<div class="container-fluid">
+			     [Spell_Right]
+                 </div>
+    		  </div>  
+  			</div>
+                 </td>
+                </tr>
+               </thead>
+        </table>
+        </div>
+<!-- Section SpellCheckMain End -->
+<!-- Section SearchSpellForm Start -->
+         <form id="search" action="index.php?page=spellcheck&amp;group=[group]" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td colspan="3">
+                The Spell checker addon is <u>[sc_enabled]</u> <br>
+				<strong>Note:</strong> To enable or disable the spell checker, you will need to edit the config file.
+                </td>
+              </tr>
+              <tr>
+                <td><label for="ara">Search for a Misspelled word:</label></td>
+			    <td><input type="text" id="search" name="search" class="form-control" /></td>
+			    <td><input type="submit" name="action" id="action" value="search" class="btn btn-primary btn-lg"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+<!-- Section SearchSpellForm End -->
+<!-- Section SpellcheckForm Start -->
+  <form id="spellCheck" action="index.php?page=spellcheck&amp;group=[group]" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                Add a Misspelled word and it's correction:
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label for="missspell">&nbsp;&nbsp;&nbsp;Misspell:</label>
+                </td>
+                <td>
+     			 <input type="text" id="missspell" name="missspell" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+  			    <label for="correction">&nbsp;&nbsp;&nbsp;Correction:</label>
+                </td>
+                <td>
+     			 <input type="text" id="correction" name="correction" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2"><input type="submit" name="action" id="action" value="add" class="btn btn-primary btn-lg btn-block"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+<!-- Section SpellcheckForm End -->
+<!-- Section EditSpellForm Start -->
+  <form id="spell" action="index.php?page=spellcheck&amp;group=[group]" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                Edit the entry for the Misspelled word [missspelling]:
+                </td>
+              </tr>
+              <tr>
+                <td>
+  			    <label for="topic">&nbsp;&nbsp;&nbsp;Misspelling:</label>
+                </td>
+                <td>
+                <input type="text" id="missspelling" name="missspelling" value="[missspelling]" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+  			    <label for="correction">&nbsp;&nbsp;&nbsp;Correction:</label>
+                </td>
+                <td>
+				<input type="text" id="correction" name="correction"  value="[correction]" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="hidden" name="id" id="id" value="[id]"/>
+                  <input type="submit" name="action" id="action" value="update" class="btn btn-primary btn-lg btn-block"/>
+				</td>
+				<td> 
+                 <input type="submit" name="action" id="action" value="Delete" onclick="return confirm('Are you sure you want to delete this entry?');" class="btn btn-primary btn-lg btn-block"/>
+				</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+<!-- Section EditSpellForm End -->
+<!-- Section WordCensorMain Start -->
+        <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                 <td width="80%">
+                    [Censor_Left]
+                    </td>
+                    <td>
+                  <div data-spy="scroll" data-target=".navbar" data-offset="12" class="scrll">
+                  <div id="section1">
+                    <div class="container-fluid">
+                     [Censor_Right]
+                     </div>
+                  </div>  
+                 </div>
+                 </td>
+                </tr>
+               </thead>
+        </table>
+        </div>
+<!-- Section WordCensorMain End -->
+<!-- Section SearchWordCensorForm Start -->
+  <form id="search" action="index.php?page=wordcensor&amp;group=[group]" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td><label for="ara">Search for an improper word:</label></td>
+			    <td><input type="text" id="search" name="search" class="form-control" /></td>
+			    <td><input type="submit" name="action" id="action" value="search" class="btn btn-primary btn-lg"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+<!-- Section SearchWordCensorForm End -->
+<!-- Section WordCensorForm Start -->
+  <form id="wordCensor" action="index.php?page=wordcensor&amp;group=[group]" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td colspan="2">
+               Add an improper word and it's replacement:
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label for="word_to_censor">&nbsp;&nbsp;&nbsp;Bad word:</label>
+                </td>
+                <td>
+     			 <input type="text" id="word_to_censor" name="word_to_censor" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+  			    <label for="correction">&nbsp;&nbsp;&nbsp;Replacement:</label>
+                </td>
+                <td>
+     			 <input type="text" id="replace_with" name="replace_with" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                <input type="hidden" name="censor_id" value="[censor_id]" />
+                <input type="submit" name="action" id="action" value="add" class="btn btn-primary btn-lg btn-block"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+<!-- Section WordCensorForm End -->
+<!-- Section EditWordCensorForm Start -->
+  <form id="wordCensor" action="index.php?page=wordcensor&amp;group=[group]" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td colspan="2">
+					Edit the entry for the improper word [word_to_censor]:
+                </td>
+              </tr>
+              <tr>
+                <td>
+  			    <label for="topic">&nbsp;&nbsp;&nbsp;Bad Word:</label>
+                </td>
+                <td>
+                <input type="text" id="word_to_censor" name="word_to_censor" value="[word_to_censor]" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+  			    <label for="correction">&nbsp;&nbsp;&nbsp;Replacement:</label>
+                </td>
+                <td>
+				<input type="text" id="replace_with" name="replace_with"  value="[replace_with]" class="form-control"/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+			      <input type="hidden" name="censor_id" id="censor_id" value="[censor_id]"/>
+                  <input type="submit" name="action" id="action" value="update" class="btn btn-primary btn-lg btn-block"/>
+				</td>
+				<td> 
+                 <input type="submit" name="action" id="action" value="Delete" onclick="return confirm('Are you sure you want to delete this entry?');" class="btn btn-primary btn-lg btn-block"/>
+				</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+<!-- Section EditWordCensorForm End -->
+<!-- Section TeachMain Start -->
+[blank]
+<div class="col-lg-12">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        You can teach the system by providing new information. To understand how, please use Help to Learn Tab below.
+    </div>
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#form" data-toggle="tab">Teach Form</a>
+            </li>
+            <li><a href="#help" data-toggle="tab">Help to Learn</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="form">
+                <p>[teach_content]</p>
+            </div>
+            <div class="tab-pane fade" id="help">
+                <p>[showHelp]</p>
+            </div>
+        </div>
+     </div>
+</div>
+</div>
+<!-- Section TeachMain End -->
+<!-- Section TeachBotForm Start -->
+[blank]
+<div class="panel-body">
+      <div class="table-responsive">
+		<form id="teach" action="index.php?page=teach" method="post">
+          <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+              <tr>
+                <td><label for="topic">Topic:</label></td>
+                <td><input type="text"  class="form-control" id="topic" name="topic" placeholder="Topic" value=""/></td>
+              </tr>
+              <tr>
+                <td><label for="thatpattern">Previous Bot Response (THAT):</label></td>
+                <td><input type="text"  class="form-control" id="thatpattern" name="thatpattern" placeholder="Previous Response" value=""/></td>
+              </tr>
+              <tr>
+                <td><label for="pattern">User Input:</label></td>
+                <td><input type="text"  class="form-control" id="pattern" name="pattern" placeholder="User Input" value=""/></td>
+              </tr> 
+             <tr>
+                <td><label for="template">System (Bot) Response:</label></td>
+                <td><textarea type="text"  class="form-control" id="template" name="template" placeholder="System Auto Response"/></textarea></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="submit" name="action" id="action" value="Teach" class="btn btn-primary btn-lg btn-block"/></td>
+              </tr>    
+      </tbody>
+    </table>
+    </form> 
+ </div>
+</div>   
+<!-- Section TeachBotForm End -->
+<!-- Section TeachShowHelp Start -->
+[blank]
+  <h3>How to Teach the System Help</h3>
+  <p class="fa fa-check"> Adding a 'Topic' means that the bot will only be able to access this response if a previous aiml category 
+  has set this topic as it's current topic.</p><br>
+  <p class="fa fa-check"> The 'Previous Bot Response' means that the bot must have answered with this text in it's last response.</p><br>
+  <p class="fa fa-check"> The 'User Input' is the the users input used to access the bots response.</p><br>
+  <p class="fa fa-check"> The 'Bot Response' is the text the bot will output when the 'user Input' has been matched.</p><br>
+  <br />
+  <h3>Simple Example</h3>
+  <p class="fa fa-user"><b> User input:</b> hello how are you</p></br>
+  <p class="fa fa-android"><b> Bot Response:</b> I am well thank you and you?</p>
+  <br />
+  <h3>Intermediate example:</h3>
+  <p class="fa fa-android"><b> Previous Bot Response:</b> I am well thank you and you</p><br>
+  <p class="fa fa-user"><b> User input:</b> ok thanks</p></br>
+  <p class="fa fa-android"><b> Bot Response:</b> That is great to hear</p>
+  <br />
+  <h3>Advanced example:</h3>
+  <p class="fa fa-check"> 1. First response <u>MUST</u> set the topic</p></br>
+  <p class="fa fa-user"><b> User input:</b> I like chatbots</p><br>
+  <p class="fa fa-android"><b> Bot Response:</b> What do you like about them?</p></br>
+    <code><set topic="chatbots"></code>
+  <br />
+  <p class="fa fa-check"> 2. Second pattern can only be accessed because the topic has been set in the previous response</p></br>
+  <dd>Topic: chatbots</dd>
+   <p class="fa fa-user"><b> User input:</b> I just think they are cool</p></br>
+  <p class="fa fa-android"><b> Bot Response:</b> Yes chatbots are cool</p>
+<!-- Section TeachShowHelp End -->
+<!-- Section MembersShowHelp Start -->
+[blank]
+<div id="showHelp">
+  <h3>Help...</h3>
+  <dd>This part is still under construction.</dd>
+  <dd></dd>
+  <dd></dd>
+  <dd></dd>
+  <br />
+</div>
+<!-- Section MembersShowHelp End -->
+<!-- Section HelpLink Start -->
+<!-- Section HelpLink End -->
+<!-- Section RSSItemTemplate Start -->
+<p>[rssRowTitle]</p>
+<p>[rssRowContent]</p>
+<br />
+<!-- Section RSSItemTemplate End -->
+<!-- Section LogoLink Start -->
+<!-- Section LogoLink End -->
+<!-- Section LogoLinkScript Start -->
+<!-- Section LogoLinkScript End -->
+<!-- Section ChatDemo Start -->
+<div id="demoChatTitle">Talk to [bot_name] using the [format] interface:</div>
+<div id="demoChatContainer">
+  <iframe id="demoChat" src="[pageSource]"></iframe>
+</div>
+<!-- Section ChatDemo End -->
+<!-- Section DbStats Start -->
+[blank]
+<div id="dbStatsTitle">Database Stats for [dbn]</div>
+<div id="dbStatsContainer">
+  <p>Uptime: [stats_uptime]</p>
+  <p>Threads: [stats_threads]</p>
+  <p>Queries: [stats_query_count]</p>
+  <p>Slow queries: [stats_slow_queries]</p>
+  <p>Flush table count: [stats_flush_count]</p>
+  <p>Tables Opened: [stats_tables_open]</p>
+  <p>Queries per second avg: [stats_qps]</p>
+</div>
+<!-- Section DbStats End -->
+<!-- Section MembersMain Start -->
+[blank]
+<div class="col-lg-10">
+<div class="panel panel-default">
+    <div class="panel-heading">
+		Here's where you add, remove or edit admin accounts.
+    </div>
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+           <li class="active">
+               <a href="#list" data-toggle="tab">Members Actions</a>
+           </li>
+           <li>
+               <a href="#help" data-toggle="tab">Help</a>
+           </li>
+       </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="list">
+		     [members_list_form]
+             [members_content]
+            </div>
+            <div class="tab-pane fade" id="help">
+                [showHelp]
+            </div> 
+        </div>
+     </div>
+</div>
+</div>
+<!-- Section MembersMain End -->
+<!-- Section MembersListForm Start -->
+[blank]
+      <div class="table-responsive">
+ 		 <form id="memberList" action="index.php?page=members" method="post">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><label for="memberSelect">Current Admins:</label></th>
+                <th>
+                <select name="memberSelect" id="memberSelect">
+        		<option value="-1">Select an Admin</option>
+				[adminList]
+		       </select><input type="hidden" name="action" value="editfromlist" />
+    			  <input type="submit" name="" value="Edit User" class="btn btn-info btn-flat"/>
+                 </th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </form>
+      </div>
+<!-- Section MembersListForm End -->
+<!-- Section MembersForm Start -->
+[blank]
+    <p><strong>[action] Admin Account:</strong></p>
+      <div class="table-responsive">
+		<form id="members" action="index.php?page=members" method="post">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td><label for="id">Account ID: (<u>not editable</u>)</label></td>
+                <td><input name="id" id="id" value="[id]" autocomplete="off" disabled="disabled" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td><label for="user_name">Login Name:</label></td>
+                <td><input name="user_name" id="user_name" value="[user_name]" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input name="password" id="password" type="password" autocomplete="off" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td><label for="passwordConfirm">Confirm Password:</label></td>
+                <td><input name="passwordConfirm" id="passwordConfirm" type="password" autocomplete="off" class="form-control"/></td>
+              </tr>
+
+              <tr>
+                <td>
+                 <input type="hidden" name="id" id="id" value="[id]" />
+                  <input type="submit" name="action" value="[action]" class="btn btn-primary btn-lg btn-block"/></td>
+                <td>  <input type="submit" name="action" value="Delete" class="btn btn-primary btn-lg btn-block"/></td>
+			 </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+<!-- Section MembersForm End -->
+<!-- Section UploadMain Start -->
+[blank]
+<div class="col-lg-12">
+<div class="panel panel-default">
+    <div class="panel-heading">
+       Use "AIML Upload" to add AIML categories to your chatbot's database.
+    </div>
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+           <li class="active">
+               <a href="#upload" data-toggle="tab">AIML Upload</a>
+           </li>
+           <li>
+              <a href="#list" data-toggle="tab">AIML List</a>
+           </li>
+           <li>
+               <a href="#help" data-toggle="tab">Help</a>
+           </li>
+       </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="upload">
+               [upload_content]
+            </div>
+            <div class="tab-pane fade" id="list">
+                [AIMLList]
+            </div>
+            <div class="tab-pane fade" id="help">
+                [showHelp]
+            </div> 
+        </div>
+     </div>
+</div>
+</div>
+<!-- Section UploadMain End -->
+<!-- Section UploadAIMLList Start -->
+[blank]
+<p>List of Currently Stored AIML files for [bot_name]:</p><br />
+    [AIML_List]
+<!-- Section UploadAIMLList End -->
+<!-- Section UploadShowHelp Start -->
+[blank]
+   <br />
+   <p>Use this uploader to add AIML categories to your chatbot's database. You have the option
+    to upload either individual AIML files, or ZIP archive files of up to 2MB in size.
+    This uploader no longer performs XML validation, so you need to validate your AIML files prior to
+    uploading them. It's <strong><u>STRONGLY SUGGESTED</u></strong> that you use either W3School's 
+    <a href="http://www.w3schools.com/xml/xml_validator.asp" target="_blank">XML Validator</a>, 
+    or the <a href="validateAIML.php">Program AIML Validator</a>. There are other XML validators
+    available, but the W3Schools validator works well, and the Program Validator is specifically
+    designed to validate AIML files. Please note, however, that neither of the above mentioned
+    validators will work with zip files.</p>
+	<br />
+<p class="fa fa-check"> If your aiml file will not upload you may want to check the following.</p><br>
+<p class="fa fa-check"> Make sure the folder you are trying to upload to has read/write privs on it (CHMOD 755)</p><br>
+<p class="fa fa-check"> Remove any comments from the aiml</p><br>
+<p class="fa fa-check"> Replace everything above the first &lt;cattegory&gt; with a simple &lt;aiml&gt; tag</p>
+<!-- Section UploadShowHelp End -->
+<!-- Section UploadAIMLForm Start -->
+[blank]
+<div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="table-responsive">
+    <form id="upload" enctype="multipart/form-data"  action="" method="post">
+     <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+			<tr>
+                <td colspan="3">
+                	<label for="bot_id">Apply this file to this bot:</label>
+        			<select name="bot_id" id="bot_id" size="1">
+                    [all_bots]
+			       </select>
+                </td>
+              </tr>
+             <tr>
+                <td><label for="aimlfile">AIML File</label></td>
+                <td><input type="file" id="aimlfile" name="aimlfile"/></td>
+                <td><input type="checkbox" id="clearDB" name="clearDB" checked="checked"/>
+                 &nbsp; &nbsp;
+		        <label for="clearDB">Clear the database of entries from this file</label>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <input type="submit" name="action" id="action" value="upload" class="btn btn-primary btn-lg"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>          
+<!-- Section UploadAIMLForm End -->
+<!-- Section DownloadAIMLMain Start -->
+[blank]
+<div class="col-lg-12">
+<div class="panel panel-default">
+    <div class="panel-heading">
+       Use "Download" to Download files as AIML.
+    </div>
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+           <li class="active">
+               <a href="#down" data-toggle="tab">AIML Download</a>
+           </li>
+           <li>
+               <a href="#help" data-toggle="tab">Help</a>
+           </li>
+       </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="down">
+               [download_content]
+            </div>
+            <div class="tab-pane fade" id="help">
+                [showHelp]
+            </div> 
+        </div>
+     </div>
+</div>
+</div>
+<!-- Section DownloadAIMLMain End -->
+<!-- Section DownloadAIMLForm Start -->
+<div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="table-responsive">
+    <form action="index.php?page=download" method="POST" id="downloadForm">
+      <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+			
+             <tr>
+                <td><input type="radio" name="type" id="actionGetFileAIML" checked="checked" value="AIML">
+          			<label for="actionGetFileAIML" style="width: 250px">Download files as AIML</label>
+          		</td>
+                
+                <td> <input type="radio" name="type" id="actionGetFileSQL" value="SQL">
+         	        <label for="actionGetFileSQL" style="width: 250px">Download files as SQL</label>
+                </td>
+                <td><input type="checkbox" id="cbSelectAll">
+          			<label for="cbSelectAll" style="width: 250px">Select all files</label>
+          		</td>
+              </tr>
+               <tr>
+      			  <td colspan="3" class="center">[file_checkboxes]</td>
+     		 </tr>
+              <tr>
+                <td colspan="3">
+                 <input type="submit" id="btnCBSub" class="btn btn-primary btn-lg" value="Download Zip">
+				</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>          
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	  $('#cbSelectAll').click(function(){$('.cbFiles').prop('checked', $(this).prop('checked'));});
+	});
+</script>
+<!-- Section DownloadAIMLForm End -->
+<!-- Section DownloadShowHelp Start -->
+[blank]
+<p><br>
+	First, choose whether to download the files as AIML files (the default action) or as SQL files. 
+    <br>
+	Once you've made all of your selections, simply click the Download button, and your request will be processed. 
+	<br>
+	<br>
+	This processing should take only a few seconds. A link will be given on the off chance that your file doesn't pop up for downloading.
+<br></p>
+<!-- Section DownloadShowHelp End -->
+<!-- Section UpperScripts Start -->
+[blank]
+<!-- Section UpperScripts End -->
+<!-- Section ClearAIMLMain Start -->
+[blank]
+<div class="col-lg-12">
+<div class="panel panel-default">
+    <div class="panel-heading">
+       Use "Download" to Download files as AIML.
+    </div>
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+           <li class="active">
+               <a href="#clear" data-toggle="tab">Clear AIML</a>
+           </li>
+           <li>
+               <a href="#help" data-toggle="tab">Help</a>
+           </li>
+       </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="clear">
+               [ClearAIML_content]
+            </div>
+            <div class="tab-pane fade" id="help">
+                [showHelp]
+            </div> 
+        </div>
+     </div>
+</div>
+</div>
+<!-- Section ClearAIMLMain End -->
+<!-- Section ClearAIMLForm Start -->
+[blank]
+<div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="table-responsive">
+    <form name="clearForm" action="index.php?page=clear" method="POST" onsubmit="return verify()">
+      <table class="table table-striped table-bordered table-hover" align="center">
+            <tbody>
+            <tr>
+            <td colspan="2">Deleting AIML categories from the database is <strong>permanent</strong>! This action <strong> CANNOT </strong> be undone!</td>
+            </tr>
+             <tr>
+                <td>
+                <input type="radio" name="action" value="void" id="actionClearFile" checked="checked">
+                <label for="actionClearFile">Clear categories from this AIML file:</label>
+          		</td>
+                
+                <td> <input type="radio" name="action" id="actionClearAll" value="clear">
+         			 <label for="actionClearAll">Clear ALL AIML categories (Purge database)</label>
+                </td>
+              
+              </tr>
+               <tr>
+      			  <td colspan="2">
+                  <select name="clearFile" id="clearFile" size="1" style="margin: 14px;" 
+                  onclick="document.getElementById('actionClearFile').checked = true" 
+                  onchange="document.getElementById('actionClearFile').checked = true">
+            	<option value="null" selected="selected">Choose a file</option>
+				[selectOptions]
+          		</select>
+                </td>
+     		 </tr>
+              <tr>
+                <td colspan="2">
+                 <input type="submit" id="clear" class="btn btn-primary btn-lg" value="Clear">
+				</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>          
+	<script type="text/javascript">
+        function verify()
+        {
+          var fn = document.getElementById('clearFile').value;
+          var clearAll = document.getElementById('actionClearAll').checked;
+          if (fn == 'null' && clearAll === false) return false;
+          if (clearAll) fn = 'repository for all files';
+          return confirm('This will delete all categories from the AIML file ' + fn + '! This cannot be undone! Are you sure you want to do this?');
+        }
+      </script>
+<!-- Section ClearAIMLForm End -->
+<!-- Section ClearAIMLHelp Start -->
+[blank]
+<br>
+<br>
+  <p>Deleting AIML categories from the database is <strong>permanent</strong>! This action <strong> CANNOT </strong> be undone!</p>
+<br>
+<br>
+<!-- Section ClearAIMLHelp End -->
+<!-- Section SearchAIMLForm Start -->
+[blank]
+<form id="search" action="index.php?page=search" method="post">
+  <fieldset>
+    <div class="row">
+      <label for="search_topic"><span class="twentyPercent">Search Topic:</span></label>
+      <span class="eightyPercent">
+      <input name="search_topic" id="search_topic" class="wide" />
+      </span></div>
+    <div class="row">
+      <label for="search_pattern"><span class="twentyPercent">Search Pattern:</span></label>
+      <span class="eightyPercent">
+      <input name="search_pattern" id="search_pattern" class="wide" />
+      </span></div>
+    <div class="row">
+      <label for="search_that"><span class="twentyPercent">Search 'That':</span></label>
+      <span class="eightyPercent">
+      <input name="search_that" id="search_that" class="wide" />
+      </span></div>
+    <div class="row">
+      <label for="search_template"><span class="twentyPercent">Search Template:</span></label>
+      <span class="eightyPercent">
+      <input name="search_template" id="search_template" class="wide" />
+      </span></div>
+    <div class="row">
+      <label for="search_filename"><span class="twentyPercent">Search FileName:</span></label>
+      <span class="eightyPercent">
+      <input name="search_filename" id="search_filename" class="wide" />
+      </span></div>
+    <div class="row center"><strong>TIP:</strong>Use % as a wildcard along with your search word/phrase to improve chances of
+      finding what you're looking for (e.g. "I % you", "%hot" or "%live%")</div>
+    <div class="row">
+      <input type="submit" name="action" id="action" value="search"/>
+    </div>
+  </fieldset>
+</form>
+<!-- Section SearchAIMLForm End -->
+<!-- Section SRAI_lookup Start -->
+[blank]
+<p class="text-center"> The SRAI lookup table currently contains [row_count] entries for [bot_name].</p>
+<br>
+<p class="text-capitalize"><a href="?page=srai_lookup&amp;action=fillLookup"><b>Fill Lookup Table</b></a></p>
+<br>
+<br>
+<p class="text-justify">The link above runs a script that searches the entire AIML table for SRAI calls for every chatbot
+  and stores valid entries (along with the bot ID and the ID's of categories with matching patterns)
+  into a special lookup table. The chatbot engine then uses this lookup table to select the proper
+  response for that SRAI call without having to search through the entire database for a "best match".
+  This can improve performance by as much as 70% for each SRAI call made that is in the lookup table.
+  Since the script runs for all current chatbots, you only have to run it once for all of your bots.
+  Just remember to run it again if you make any significant changes to your AIML, especially if you
+  add or remove a chatbot. You don't have to worry about duplicates because the script starts by
+  emptying the lookup table first, and then uses a routine that rejects duplicates on a per-bot basis.
+</p>
+<!-- Section SRAI_lookup End -->
+<!-- Section EditAIMLForm Start -->
+<form id="edit" action="index.php?page=search" method="post">
+  <fieldset>
+    <div class="row fm-opt">
+      <label for="topic"><span class="twentyPercent">Topic:</span></label>
+      <span class="eightyPercent">
+      <input type="text" id="topic" name="topic" value="[topic]" class="wide" />
+      </span></div>
+    <div class="row fm-opt">
+      <label for="thatpattern"><span class="twentyPercent">Previous Response ('that'):</span></label>
+      <span class="eightyPercent">
+      <textarea type="text" id="thatpattern" name="thatpattern"  value="[thatpattern]" class="wide" /></textarea>
+      </span></div>
+    <div class="row fm-opt">
+      <label for="pattern"><span class="twentyPercent">User Input:</span></label>
+      <span class="eightyPercent">
+      <input type="text" id="pattern" name="pattern"  value="[pattern]" class="wide" />
+      </span></div>
+    <div class="row fm-opt">
+      <label for="template"><span class="twentyPercent">Bot Response:</span></label>
+      <span class="eightyPercent">
+      <textarea id="template" name="template" class="wide" />
+      [template]
+      </textarea>
+      </span></div>
+    <div class="row fm-opt">
+      <label for="filename"><span class="twentyPercent">Filename:</span></label>
+      <span class="eightyPercent">
+      <input type="text" id="filename" name="filename"  value="[filename]" class="wide" />
+      </span></div>
+    <div id="row fm-submit" class="fm-req">
+      <input type="hidden" name="id" id="id" value="[id]"/>
+      <input type="submit" name="action" id="action" value="update"/>
+    </div>
+  </fieldset>
+</form>
+<!-- Section EditAIMLForm End -->
+<!-- Section StatsPage Start -->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Conversations</h3>
+            </div>
+            <div class="panel-body">
+             <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Occurence #</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Today</td>
+                        <td>[oneday]</td>
+                    </tr>
+                    <tr>
+                        <td>Last week</td>
+                        <td>[oneweek]</td>
+                    </tr>
+                    <tr>
+                        <td>Last month</td>
+                        <td>[onemonth]</td>
+                    </tr>
+                    <tr>
+                        <td>Last six months</td>
+                        <td>[sixmonths]</td>
+                    </tr>
+                    <tr>
+                        <td>Last year</td>
+                        <td>[oneyear]</td>
+                    </tr>
+                    <tr>
+                        <td>All time</td>
+                        <td>[alltime]</td>
+                    </tr>
+             </tbody>
+            </table>
+	        </div>
+    		</div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+	    <div class="panel panel-default">
+    	  <div class="panel-heading">
+    			<h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Conversation Lines</h3>
+    	  </div>
+    	  <div class="panel-body">
+             <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Lines</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Single line</td>
+                        <td>[singlelines]</td>
+                    </tr>
+                    <tr>
+                        <td>1-25 lines</td>
+                        <td>[alines]</td>
+                    </tr>
+                    <tr>
+                        <td>25-50 lines</td>
+                        <td>[blines]</td>
+                    </tr>
+                    <tr>
+                        <td>51-100 lines</td>
+                        <td>[clines]</td>
+                    </tr>
+                    <tr>
+                        <td>101+ lines</td>
+                        <td>[dlines]</td>
+                    </tr>
+                    <tr>
+                        <td>Average</td>
+                        <td>[avg]</td>
+                    </tr>
+             </tbody>
+            </table>
+	        </div>
+         </div>
+      </div>
+  </div>
+
+<!-- Section StatsPage End -->
+<!-- Section EditAimlPage Start -->
+[blank]
+<div class="yui3-skin-sam editaiml-table">
+  <div class='search-msg'></div>
+</div>
+<script src="http://yui.yahooapis.com/3.18.0/build/yui/yui-min.js"></script>
+<script src="scripts/editAiml.js"></script>
+<!-- Section EditAimlPage End -->
+<!-- Section DataTable Start -->
+[blank]
+<div class="editaiml-table">
+  <div class='search-msg'></div>
+  <table id="[table_id]" class="datatable-table">
+    <thead class="datatable-columns">
+    [thead_content]
+      </thead>
+    <tfoot>
+    [tfoot_content]
+      </tfoot>
+    <tbody>
+    [tbody_content]
+      </tbody>
+  </table>
+</div>
+<!-- Section DataTable End -->
+<!-- Section DataTableScript Start -->
+[blank]<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="scripts/jeditable.js"></script>
+<script type="text/javascript" src="scripts/jquery.datatable.editable.js"></script>
+<script type="text/javascript">
+      $(function(){
+        $('#[table_id] thead th.search').each( function () {
+          var title = $(this).text();
+          $(this).html( '<input type="text" placeholder="Search ' + title + '" />' );
+        });
+        var editOptions = {
+          sUpdateURL: 'seTest.php?action=test',
+        };
+        var tableOptions = {
+          scrollY: '340','bPaginate': true,
+          'sDom': 'lpit'
+        };
+        var table = $('#[table_id]').dataTable(tableOptions).makeEditable(editOptions);//
+      });
+    </script>
+<!-- Section DataTableScript End -->
+<!-- Section DataTableCSS Start -->
+<link rel="stylesheet" href="datatables.css" type="text/css">
+[blank]
+<!-- Section DataTableCSS End -->
+<!-- Section BugForm Start -->
+[blank]
+<!-- Section BugForm End -->
+<!-- Section SearchTable Start -->
+[blank]
+<p>Use the handy table below to both search and edit your AIML categories.</p>
+<!-- Section SearchTable End -->
+<!-- Section SearchScripts Start -->
+[blank]
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.5/css/jquery.dataTables.css" />
+<style type="text/css">
+tfoot {
+	display: table-header-group;
+}
+</style>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="scripts/jeditable.js"></script>
+<script type="text/javascript" src="scripts/jquery.datatable.editable.js"></script>
+<script type="text/javascript">
+      $(function() {
+        // Setup - add a text input to each footer cell
+/*
+*/
+        $('#tblAIML tfoot th').each( function () {
+          var title = $('#tblAIML thead th').eq($(this).index()).text();
+          $(this).html('<input type="text" placeholder="Search '+title+'" />' );
+        });
+        // DataTable
+        var table = $('#tblAIML').dataTable({
+          'columns': [
+            {'width': '10%'},
+            {'width': '10%'},
+            {'width': '10%'},
+            {'width': '70%'},
+            {'width': '10%'}
+          ],
+          'iDisplayLength': 10,
+          'pagingType': 'full_numbers',
+          'sDom': 'lrpit',
+          'processing': true,
+          'serverSide': true,
+          'ajax': 'ajax.php',
+          'sServerMethod': 'POST'
+        }).makeEditable();
+        // Apply the search
+        var tableAPI = table.api();
+        tableAPI.columns().eq(0).each( function(colIdx) {
+          $('input', tableAPI.column(colIdx).footer()).on('keyup change', function() {
+            tableAPI.column(colIdx).search(this.value).draw();
+          });
+        });
+/*
+*/
+      });
+    </script>
+<!-- Section SearchScripts End -->

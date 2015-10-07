@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8"?>
+<!-- First Data -->
+<category>
+<pattern>Reading Discussion</pattern>
+	<template>http://uwmltc.org/?p=9881</template>
+</category>
+<category>
+<pattern>Reading View</pattern>
+	<template>
+		<srai>Reading Discussion</srai>
+	</template>
+</category>
+<category>
+<pattern>Discussions List</pattern>
+	<template>
+		<srai>Reading Discussion</srai>
+	</template>
+</category>
+<category>
+<pattern>Discussions *</pattern>
+	<template>
+		<srai>Reading Discussion</srai>
+	</template>
+</category>
+
+
+
+</aiml>

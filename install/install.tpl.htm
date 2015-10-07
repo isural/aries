@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Irfan SURAL">
+<title>ARIES - Artificial Intelligence Distance Education Support</title>
+    <link href="../includes/css/bootstrap.min-ins.css" rel="stylesheet">
+    <link href="../includes/css/aries.css" rel="stylesheet">
+    <link href="../includes/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#install">ARIES</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a href="/aires/#page-top">Install</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="help.php">Install Help</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://uwm.edu">UWM</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://uwm.edu/cetl/">CETL</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+[cr6] 
+<div class="col-lg-12 text-center">
+  <h3>Artificial Intelligence Distance Education Support</h3>
+  <hr class="star-primary">
+</div>
+<!-- Section Header End --> 
+<!-- Section Container Start -->
+<section id="install">
+  <div class="container">
+            <div class="row"></div>
+  <div class="row"> [mainPanel] </div>
+  [cr4]
+  </div>
+</section>   
+<!-- Section Container End --> 
+  <!-- Section Footer Start -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Irfan Sural 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../includes/js/jquery.js"></script> 
+<script src="../includes/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="../includes/js/classie.js"></script>
+<script src="../includes/js/cbpAnimatedHeader.js"></script>
+<script src="../includes/js/aries.js"></script>
+<!-- Section Footer End --> 
+<!-- Section jQuery1 Start --> 
+  <script type="text/javascript" src="../scripts/tzDetect.js"></script>
+<script type="text/javascript" src="../scripts/jquery.js"></script>
+<script type="text/javascript" src="../scripts/jquery.selectboxes.js"></script>
+<script type="text/javascript" src="../scripts/jquery.validate.js"></script>
+<script type="text/javascript">
+      var rowHeight = 16.5;
+      var url = 'about:blank';
+      var helpWindow = null; // global variable
+      $(function() {
+        //var sWidth = $(window).width();
+        buildSelect('time_zone_locale');
+        $('#save_stateSession').attr('checked', true);
+        $('#adm_dbp_confirm').blur(function() {
+          if (!validatePass()) {
+            alert('passwords don\'t match, or both are empty!');
+          }
+        });
+        $('#action').click(function() {
+          return confirm("You are about to over-write the configuration file.\nIncorrect or incomplete data will cause errors.\nAre you sure you wish to continue?");
+        });
+        $('#helpLink1').click(function(e) {
+          e.preventDefault();
+          var url = 'help.php';
+          helpPopups(url);
+        });
+        $('span.helpButton').attr('title','Click here to get help for the current item.');
+        $('span.helpButton').click(function() {
+          var tmpHash = $(this).attr('id');
+          var hash = tmpHash.replace('hb_','');
+          url = 'help.php#' + hash;
+          helpPopups(url);
+        });
+      });
+      function buildSelect(id) {
+        var timezone = determine_timezone().timezone;
+        var thisLocale = timezone.olson_tz;
+        var label = '#' + id;
+        for(var tz in olson.timezones) {
+          var tmpTZ = olson.timezones[tz];
+          var val = tmpTZ.olson_tz;
+		     $(label).addOption(val, val);
+        }
+        $(label).selectOptions(thisLocale);
+      }
+      function helpPopups (url) {
+        var options = 'left=150,top=100,width=800,height=600,scrollbars=1';
+        if (null === helpWindow || helpWindow.closed) {
+          helpWindow = window.open(url,'helpWindow',options,true);
+          setTimeout(function(){helpWindow.highlight()},500);
+        }
+        else if (null === helpWindow.location) {
+          helpWindow.close();
+          helpWindow = null;
+          helpPopups (url);
+        }
+        else {
+          helpWindow.location.replace(url);
+          helpWindow.focus();
+          helpWindow.highlight();
+        }
+      }
+      function validatePass() {
+        var pw1 = $('#adm_dbp').val();
+        var pw2 = $('#adm_dbp_confirm').val();
+        return (('' !== pw1) && (pw1 === pw2));
+      }
+    </script>
+<!-- Section jQuery1 End --> 
+  <!-- Section InstallForm Start --> 
+  [errorMessage]
+  <form name="installForm" id="installForm" action="[PHP_SELF]" method="post">
+      <div class="row">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th colspan="2" class="h3">Botmaster Info:</th>
+                <th colspan="2" class="h3">Database Configuration:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td width="25%">Your Name:</td>
+                <td width="25%"><input name="botmaster_name" id="botmaster_name" value="" class="form-control"/></td>
+                <td width="21%">DB Host Name:</td>
+                <td width="29%"><input name="dbh" id="dbh" value="" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td>Email Address:</td>
+                <td><input name="debugemail" id="debugemail" value="" class="form-control"/></td>
+                <td>DB Name:</td>
+                <td><input name="dbn" id="dbn" value="" class="form-control"/></td>
+               
+              </tr>
+              <tr>
+                <td colspan="2"><span class="h3">Bot Configuration:</span></td>
+                <td>DB Port:</td>
+                <td><input name="dbPort" id="dbPort" value="3306" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td>Bot Name:</td>
+                <td><input name="bot_name" id="bot_name" value="" class="form-control"/></td>
+                <td>DB Username:</td>
+                <td><input name="dbu" id="dbu" value="" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td>Bot Description:</td>
+                <td><input name="bot_desc" id="bot_desc" value="" class="form-control"/></td>
+                <td>DB Password:</td>
+                <td><input name="dbp" id="dbp" value="" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td>Bot Active?</td>
+                <td><input type="checkbox" name="bot_active" id="bot_active" value="1" checked="checked" /></td>
+                <td>DB Timezone:</td>
+                <td>  
+                <select name="time_zone_locale" id="time_zone_locale">
+                </select></td>
+              </tr>
+              <tr>
+                <td>Response Format:</td>
+                <td><select name="format" id="format" size="1">
+                  <option value="json" selected="selected">JSON</option>
+                  <option value="html">HTML</option>
+                  <option value="xml">XML</option>
+                </select></td>
+                <td>Admin Area Username:</td>
+                <td><input name="adm_dbu" id="adm_dbu" value="" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td>Error Response String:</td>
+                <td><input type="text" name="error_response" id="error_response" value="[error_response]" /></td>
+                <td>Admin Area Password:</td>
+                <td><input name="adm_dbp" id="adm_dbp" type="password" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Confirm Admin Area Password:</td>
+                <td><input name="adm_dbp_confirm" id="adm_dbp_confirm" type="password" class="form-control"/></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Debug Level</td>
+                <td> 
+                 <select name="debug_level" id="debug_level" size="1">
+                    <option value="0">Show no debugging</option>
+                    <option value="1">errors only</option>
+                    <option value="2" selected="selected">general + errors</option>
+                    <option value="3">general + errors + sql</option>
+                    <option value="4" selected="selected">show everything</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Debug Mode</td>
+                <td>  <select name="debug_mode" id="debug_mode" size="1">
+                  <option value="0">Show in Source</option>
+                  <option value="1" selected="selected">File (default)</option>
+                  <option value="2">Display</option>
+                  <option value="3">Email</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+                <td>Save State</td>
+                <td> <select name="save_state" id="save_state" size="1">
+                  <option value="session" selected="selected">Session</option>
+                  <option value="database">Database</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td colspan="4">[notes]</td>
+              </tr>
+              <tr>
+                <td colspan="4" align="center">
+                  <input name="page" value="2" type="hidden">
+                <input name="bot_id" value="1" type="hidden">
+                <input name="error_response" value="[error_response]" type="hidden">
+                <input name="action" id="action" type="submit" value="Save" class="btn btn-lg btn-success">
+               </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</form>
+  <!-- Section InstallForm End --> 
+  <!-- Section InstallComplete Start -->
+<div class="row">
+  <div class="alert alert-success" role="alert"><strong>Installation Complete!</strong> </div>
+    <span class="text-justify">[notes] </span>
+</div>
+  <!-- Section InstallComplete End --> 
+  <!-- Section InstallError Start -->
+<div class="row">
+  <div class="alert alert-warning" role="alert"> <strong>Installation Failed!</strong></div>
+    <span class="text-justify">[errorMessage] </span>
+</div>  
+<!-- Section InstallError End --> 
+  <!-- Section DBCreationError Start -->
+  <div class="row">
+    <div class="alert alert-warning" role="alert"> <strong>WARNING! </strong> </div>
+    <span class="text-justify">Could not create the database. Please check your database settings and make any
+    necessary corrections. Some database hosts do not allow users to directly create
+    new databases. You may need to contact your hosting provider to learn how to set
+    up a new database. </span>
+  </div>
+  <!-- Section DBCreationError End --> 
+  <!-- Section Page 1 Notes Start -->
+   <span class="text-justify">Please note that all fields are required, but some are already filled out with generic, default
+    values. For more detailed information with this page, please see the <a href="help.php" target="_blank">Help Page</a> </span>
+  &nbsp; 
+  <!-- Section Page 1 Notes End --> 
+  <!-- Section Page 2 Notes Start -->
+  <div class="row"> &nbsp; The configuration for both the bot and the database are complete,
+    but you now need to upload your bot's AIML categories. Please log into the <a href="[admin_url]">Admin Page</a> to complete the process. </div>
+  <br>
+<br>
+
+<div class="row"><!-- spacer div --></div>
+  
+   <div role="alert">
+        <strong>NOTE:</strong> 
+    
+    If you wish to use a different account
+    for your Program Admin user, then you will need to edit the configuration
+file manually. </div>
+  <!-- Section Page 2 Notes End --> 
+</div>
+
+</body>
+</html>

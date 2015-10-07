@@ -1,0 +1,15 @@
+User-agent: *
+Crawl-delay: 1
+Disallow: /admin
+Disallow: /chatbot
+Disallow: /config
+Disallow: /install
+Disallow: /library
+Disallow: /logs
+Disallow: /scripts
+
+# GUI folders - Comment out the ones you don't want to use
+Disallow: /gui/plain
+Disallow: /gui/jquery
+Disallow: /gui/twitter
+Disallow: /gui/xml
